@@ -12,6 +12,8 @@ Future<Null> main() async {
   // ignore: deprecated_member_use
   MaterialPageRoute.debugEnableFadingRoutes = true;
 
+  //App State is an immutable Object that lives at the top of your Widget hierarchy within a Store
+//  The Store is passed down to all ancestors via an InheritedWidget called a StoreProvider
   var store = await createStore();
   runApp(new InKinoApp(store));
 }

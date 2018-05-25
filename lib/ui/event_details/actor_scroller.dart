@@ -13,6 +13,7 @@ class ActorScroller extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+//    To read data from the State, use selector functions. These act like queries against your "State Database".
     return new StoreConnector<AppState, List<Actor>>(
       onInit: (store) => store.dispatch(new FetchActorAvatarsAction(event)),
       converter: (store) => actorsForEventSelector(store.state, event),

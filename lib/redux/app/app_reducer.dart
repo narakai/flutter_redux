@@ -6,6 +6,7 @@ import 'package:inkino/redux/show/show_reducer.dart';
 import 'package:inkino/redux/theater/theater_reducer.dart';
 
 AppState appReducer(AppState state, dynamic action) {
+  //      The State object is immutable. To update the State, you must dispatch an Action.
   return new AppState(
     searchQuery: searchQueryReducer(state.searchQuery, action),
     actorsByName: actorReducer(state.actorsByName, action),

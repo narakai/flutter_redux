@@ -12,12 +12,15 @@ import 'package:inkino/redux/theater/theater_middleware.dart';
 import 'package:redux/redux.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+//https://gitlab.com/brianegan/flutter_architecture_samples/tree/master/example/redux
+
 Future<Store<AppState>> createStore() async {
   var tmdbApi = new TMDBApi();
   var finnkinoApi = new FinnkinoApi();
   var prefs = await SharedPreferences.getInstance();
 
   return new Store(
+//    The State object is immutable. To update the State, you must dispatch an Action.
     appReducer,
     initialState: new AppState.initial(),
     distinct: true,
