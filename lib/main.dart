@@ -13,13 +13,13 @@ Future<Null> main() async {
   MaterialPageRoute.debugEnableFadingRoutes = true;
 
   //App State is an immutable Object that lives at the top of your Widget hierarchy within a Store
-//  The Store is passed down to all ancestors via an InheritedWidget called a StoreProvider
   var store = await createStore();
   runApp(new InKinoApp(store));
 }
 
 class InKinoApp extends StatefulWidget {
   InKinoApp(this.store);
+
   final Store<AppState> store;
 
   @override
@@ -35,6 +35,7 @@ class _InKinoAppState extends State<InKinoApp> {
 
   @override
   Widget build(BuildContext context) {
+    //  The Store is passed down to all ancestors via an InheritedWidget called a StoreProvider
     return new StoreProvider<AppState>(
       store: widget.store,
       child: new MaterialApp(
