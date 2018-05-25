@@ -70,7 +70,7 @@ class _MainPageState extends State<MainPage>
     ///
     /// This can be useful for imperative calls to things like Navigator,
     /// TabController, etc
-    /// 
+    ///
     var subtitle = new StoreConnector<AppState, Theater>(
       converter: (store) => store.state.theaterState.currentTheater,
       builder: (BuildContext context, Theater currentTheater) {
