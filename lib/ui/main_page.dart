@@ -63,6 +63,14 @@ class _MainPageState extends State<MainPage>
     var horizontalTitleAlignment =
         Platform.isIOS ? CrossAxisAlignment.center : CrossAxisAlignment.start;
 
+    /// A function that will be run on State change.
+    ///
+    /// This function is passed the `ViewModel`, and if `distinct` is `true`,
+    /// it will only be called if the `ViewModel` changes.
+    ///
+    /// This can be useful for imperative calls to things like Navigator,
+    /// TabController, etc
+    /// 
     var subtitle = new StoreConnector<AppState, Theater>(
       converter: (store) => store.state.theaterState.currentTheater,
       builder: (BuildContext context, Theater currentTheater) {
